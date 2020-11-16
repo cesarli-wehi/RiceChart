@@ -1,0 +1,90 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col bar">
+      <app-bar
+        [barColour]="'red'"
+        [barName]="'Units'"
+        [barData]="2"
+        [barLabel]="2"
+        [barMax]="5">
+      </app-bar>
+    </div>
+    <div class="col bar">
+      <app-bar
+        [barColour]="'orange'"
+        [barName]="'cons'"
+        [barData]="10"
+        [barLabel]="'kw/h'"
+        [barMax]="10">
+      </app-bar>
+    </div>
+    <div class="col bar">
+      <app-bar
+        [barColour]="'blue'"
+        [barName]="'H20'"
+        [barData]="2"
+        [barLabel]="'Kg'"
+        [barMax]="10">
+      </app-bar>
+    </div>
+    <div class="col bar">
+      <app-bar
+        [barColour]="'azure'"
+        [barName]="'H2'"
+        [barData]="40"
+        [barLabel]="'litres'"
+        [barMax]="100">
+      </app-bar>
+    </div>
+    <div class="col bar">
+      <app-bar
+        [barColour]="'yellow'"
+        [barName]="'O'"
+        [barData]="4"
+        [barLabel]="'Tons'"
+        [barMax]="10">
+      </app-bar>
+    </div>
+    <div class="col bar">
+      <app-bar
+        [barColour]="'brown'"
+        [barName]="'Methane'"
+        [barData]="2"
+        [barLabel]="'T/Yr'"
+        [barMax]="10">
+      </app-bar>
+    </div>
+    <div class="col bar">
+      <app-bar
+        [barColour]="'black'"
+        [barName]="'CO2'"
+        [barData]="2"
+        [barLabel]="'T/Yr'"
+        [barMax]="10">
+      </app-bar>
+    </div>
+    <div class="col bar">
+      <app-bar
+        [barColour]="'gray'"
+        [barName]="'Gas Cost'"
+        [barData]="0.5"
+        [barLabel]="'Pence'"
+        [barMax]="1">
+      </app-bar>
+    </div>
+    <div class="col bar">
+      <app-bar
+        [barColour]="'green'"
+        [barName]="'ROI'"
+        [barData]="1.5"
+        [barLabel]="'Yr'"
+        [barMax]="5">
+      </app-bar>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <app-bar-inputs></app-bar-inputs>
+    </div>
+  </div>
+</div>
