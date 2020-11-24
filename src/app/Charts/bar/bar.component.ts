@@ -1,13 +1,16 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { debugOutputAstAsTypeScript } from '@angular/compiler';
+import { typeWithParameters } from '@angular/compiler/src/render3/util';
+import { Component, Input, OnChanges, OnInit, SimpleChange, SimpleChanges, ViewChild } from '@angular/core';
 import { ChartDataSets, ChartOptions, ChartType } from 'chart.js';
-import { Label } from 'ng2-charts';
+import { BaseChartDirective, Label } from 'ng2-charts';
 
 @Component({
   selector: 'app-bar',
   templateUrl: './bar.component.html',
   styleUrls: ['./bar.component.css']
 })
-export class BarComponent implements OnInit {
+export class BarComponent implements OnChanges {
+  @ViewChild(BaseChartDirective, {static: false}) public chart: BaseChartDirective;
   @Input() barColour;
   @Input() barName;
   @Input() barData;
@@ -25,13 +28,20 @@ export class BarComponent implements OnInit {
     }
   ];
 
-  barChartData: ChartDataSets[] = [
-    { data: [45], label: 'Test' }
-  ];
+  barChartData: ChartDataSets[];
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
+    this.drawChart();
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    this.updateChart();
+  }
+
+  drawChart() {
     this.barChartOptions = {
       responsive: true,
       scales: {
@@ -70,7 +80,18 @@ export class BarComponent implements OnInit {
         barThickness: 100,
         barPercentage: 1.0,
       }
-    ]
+    ];
+
+  }
+
+  updateChart() {
+    if(this.barChartData) {
+      this.barChartData[0]['data'] = [this.barData];
+    }
+
+    // just trying refresh full variable
+    //this.barChartData = this.barChartData.slice();
+
   }
 
 }

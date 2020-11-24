@@ -7,6 +7,8 @@ import { ChartsModule, ThemeService } from 'ng2-charts';
 import { BarComponent } from './Charts/bar/bar.component';
 import { BarInputsComponent } from './UserControls/bar-inputs/bar-inputs.component';
 import { ChartDashComponent } from './chart-dash/chart-dash.component';
+import { FormsModule } from '@angular/forms';
+import { DataService } from './services/data.service';
 
 
 @NgModule({
@@ -14,15 +16,17 @@ import { ChartDashComponent } from './chart-dash/chart-dash.component';
     BarComponent,
     BarInputsComponent,
     AppComponent,
-    ChartDashComponent
+    ChartDashComponent,
    ],
   imports: [
+    FormsModule,
     ChartsModule,
     BrowserModule,
     AppRoutingModule
   ],
   providers: [
     ThemeService,
+    DataService,
   ],
   bootstrap: [AppComponent]
 })

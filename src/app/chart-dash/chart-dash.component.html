@@ -1,10 +1,10 @@
-<div class="container-fluid">
-  <div class="row">
+<div class="container-fluid" >
+  <div class="row" *ngIf="barData">
     <div class="col bar">
       <app-bar
         [barColour]="'red'"
         [barName]="'Units'"
-        [barData]="2"
+        [barData]="barData.units"
         [barLabel]="2"
         [barMax]="5">
       </app-bar>
@@ -13,7 +13,7 @@
       <app-bar
         [barColour]="'orange'"
         [barName]="'cons'"
-        [barData]="10"
+        [barData]="barData.consumption"
         [barLabel]="'kw/h'"
         [barMax]="10">
       </app-bar>
@@ -22,7 +22,7 @@
       <app-bar
         [barColour]="'blue'"
         [barName]="'H20'"
-        [barData]="2"
+        [barData]="barData.waterUsage"
         [barLabel]="'Kg'"
         [barMax]="10">
       </app-bar>
@@ -67,9 +67,9 @@
       <app-bar
         [barColour]="'gray'"
         [barName]="'Gas Cost'"
-        [barData]="0.5"
+        [barData]="barData.gasCost"
         [barLabel]="'Pence'"
-        [barMax]="1">
+        [barMax]="10">
       </app-bar>
     </div>
     <div class="col bar">
@@ -84,7 +84,7 @@
   </div>
   <div class="row">
     <div class="col">
-      <app-bar-inputs></app-bar-inputs>
+      <app-bar-inputs (inputChange)="calcData($event)"></app-bar-inputs>
     </div>
   </div>
 </div>

@@ -1,21 +1,57 @@
 <form class="form-inline mt-5">
-  <label class="sr-only" for="inlineFormInputName2">Name</label>
-  <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Jane Doe">
-
-  <label class="sr-only" for="inlineFormInputGroupUsername2">Username</label>
-  <div class="input-group mb-2 mr-sm-2">
-    <div class="input-group-prepend">
-      <div class="input-group-text">@</div>
+<div class="row">
+  <div class="col">
+    <label class="lbl" for="energyIn">Energy In</label>
+    <div class="input-group mb-2 mr-sm-2">
+      <input name="energy" type="number" class="form-control" id="energyIn" placeholder="Energy in" [ngModel]="userInputs.energy" (ngModelChange)="energyValueChanged($event)">
     </div>
-    <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Username">
   </div>
 
-  <div class="form-check mb-2 mr-sm-2">
-    <input class="form-check-input" type="checkbox" id="inlineFormCheck">
-    <label class="form-check-label" for="inlineFormCheck">
-      Remember me
-    </label>
+  <div class="col">
+    <label class="lbl" for="instCost">Installation Cost (out)</label>
+    <div class="input-group mb-2 mr-sm-2">
+      <input name="instCost" type="number" class="form-control" id="instCost" placeholder="Installation cost" [ngModel]="costs" value="{{costs}}">
+    </div>
   </div>
+
+  <div class="col">
+    <label class="lbl" for="elCost">Water</label>
+    <div class="input-group mb-2 mr-sm-2">
+      <input name="water" type="number" class="form-control" id="water" placeholder="Water" [ngModel]="userInputs.water" (ngModelChange)="waterValueChanged($event)">
+    </div>
+  </div>
+
+  <div class="col">
+    <label class="lbl" for="elCost">Electricity Cost</label>
+    <div class="input-group mb-2 mr-sm-2">
+      <input name="elCost" type="number" class="form-control" id="elCost" placeholder="Electricity Cost" [ngModel]="userInputs.electricityCost" (ngModelChange)="electricityValueChanged($event)">
+    </div>
+  </div>
+
+  <div class="col">
+    <label class="lbl" for="gasCost">Gas Cost</label>
+    <div class="input-group mb-2 mr-sm-2">
+      <input name="gasCost" type="number" class="form-control" id="gasCost" placeholder="Gas Cost" [ngModel]="userInputs.gasCost" (ngModelChange)="gasValueChanged($event)">
+    </div>
+  </div>
+
+  <div class="col">
+    <label class="lbl" for="hValue">H2 Value</label>
+    <div class="input-group mb-2 mr-sm-2">
+      <input name="hValue" type="number" class="form-control" id="hValue" placeholder="H2 Value" [ngModel]="userInputs.h2Value" (ngModelChange)="h2ValueChanged($event)">
+    </div>
+  </div>
+
+  <div class="col">
+    <label class="lbl" for="oxProd">Oxygen Production</label>
+    <div class="input-group mb-2 mr-sm-2">
+      <input name="oxProd" type="number" class="form-control" id="oxProd" placeholder="Oxygen Production" [ngModel]="userInputs.oValue" (ngModelChange)="oValueChanged($event)">
+    </div>
+  </div>
+</div>
+
+
+
 
 </form>
 
