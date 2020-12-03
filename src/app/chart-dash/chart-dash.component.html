@@ -2,83 +2,92 @@
   <div class="row" *ngIf="barData">
     <div class="col bar">
       <app-bar
-        [barColour]="'red'"
-        [barName]="'Units'"
+        [barColour]="units.colour"
+        [barName]="units.barName"
         [barData]="barData.units"
-        [barLabel]="2"
-        [barMax]="5">
+        [barLabel]="units.barLabel"
+        [barMax]="units.barMax"
+        [barMin]="units.barMin">
       </app-bar>
     </div>
-    <div class="col bar">
+    <!-- <div class="col bar">
       <app-bar
-        [barColour]="'orange'"
-        [barName]="'cons'"
+        [barColour]="consumption.colour"
+        [barName]="consumption.barName"
         [barData]="barData.consumption"
-        [barLabel]="'kw/h'"
-        [barMax]="10">
+        [barLabel]="consumption.barLabel"
+        [barMax]="consumption.barMax"
+        [barMin]="consumption.barMin">
       </app-bar>
-    </div>
+    </div> -->
     <div class="col bar">
       <app-bar
-        [barColour]="'blue'"
-        [barName]="'H20'"
+        [barColour]="water.colour"
+        [barName]="water.barName"
         [barData]="barData.waterUsage"
-        [barLabel]="'Kg'"
-        [barMax]="10">
+        [barLabel]="water.barLabel"
+        [barMax]="water.barMax"
+        [barMin]="water.barMin">
       </app-bar>
     </div>
     <div class="col bar">
       <app-bar
-        [barColour]="'azure'"
-        [barName]="'H2'"
-        [barData]="40"
-        [barLabel]="'litres'"
-        [barMax]="100">
+        [barColour]="h2Prod.colour"
+        [barName]="h2Prod.barName"
+        [barData]="barData.hydrogenProd"
+        [barLabel]="h2Prod.barLabel"
+        [barMax]="h2Prod.barMax"
+        [barMin]="h2Prod.barMin">
       </app-bar>
     </div>
     <div class="col bar">
       <app-bar
-        [barColour]="'yellow'"
-        [barName]="'O'"
-        [barData]="4"
-        [barLabel]="'Tons'"
-        [barMax]="10">
+        [barColour]="oProd.colour"
+        [barName]="oProd.barName"
+        [barData]="barData.oxygenProd"
+        [barLabel]="oProd.barLabel"
+        [barMax]="oProd.barMax"
+        [barMin]="oProd.barMin">
       </app-bar>
     </div>
     <div class="col bar">
       <app-bar
-        [barColour]="'brown'"
-        [barName]="'Methane'"
-        [barData]="2"
-        [barLabel]="'T/Yr'"
-        [barMax]="10">
+        [barColour]="methaneCons.colour"
+        [barName]="methaneCons.barName"
+        [barData]="barData.fuelSavings"
+        [barLabel]="methaneCons.barLabel"
+        [barMax]="methaneCons.barMax"
+        [barMin]="methaneCons.barMin">
       </app-bar>
     </div>
     <div class="col bar">
       <app-bar
-        [barColour]="'black'"
-        [barName]="'CO2'"
-        [barData]="2"
-        [barLabel]="'T/Yr'"
-        [barMax]="10">
+        [barColour]="co2Prod.colour"
+        [barName]="co2Prod.barName"
+        [barData]="barData.carbonProd"
+        [barLabel]="co2Prod.barLabel"
+        [barMax]="co2Prod.barMax"
+        [barMin]="co2Prod.barMin">
       </app-bar>
     </div>
-    <div class="col bar">
+    <!-- <div class="col bar">
       <app-bar
-        [barColour]="'gray'"
-        [barName]="'Gas Cost'"
+        [barColour]="gasCost.colour"
+        [barName]="gasCost.barName"
         [barData]="barData.gasCost"
-        [barLabel]="'Pence'"
-        [barMax]="10">
+        [barLabel]="gasCost.barLabel"
+        [barMax]="gasCost.barMax"
+        [barMin]="gasCost.barMin">
       </app-bar>
-    </div>
+    </div> -->
     <div class="col bar">
       <app-bar
-        [barColour]="'green'"
-        [barName]="'ROI'"
-        [barData]="1.5"
-        [barLabel]="'Yr'"
-        [barMax]="5">
+        [barColour]="roi.colour"
+        [barName]="roi.barName"
+        [barData]="barData.roi"
+        [barLabel]="roi.barLabel"
+        [barMax]="roi.barMax"
+        [barMin]="roi.barMin">
       </app-bar>
     </div>
   </div>

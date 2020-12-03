@@ -4,7 +4,7 @@ export class ChartData {
   waterUsage: number;
   hydrogenProd: number;
   oxygenProd: number;
-  methaneCons: number;
+  fuelSavings: number;
   carbonProd: number;
   gasCost: number;
   roi: number;

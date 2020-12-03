@@ -24,13 +24,23 @@ export class BarInputsComponent implements OnInit {
     this.inputChange.emit(this.userInputs);
   }
 
-  waterValueChanged(event) {
-    this.userInputs.water = event;
+  uptimeValueChanged(event) {
+    this.userInputs.uptime = event;
     this.inputChange.emit(this.userInputs);
   }
 
-  electricityValueChanged(event) {
-    this.userInputs.electricityCost = event;
+  methaneValueChanged(event) {
+    this.userInputs.methaneCons = event;
+    this.inputChange.emit(this.userInputs);
+  }
+
+  co2ValueChanged(event) {
+    this.userInputs.co2Prod = event;
+    this.inputChange.emit(this.userInputs);
+  }
+
+  fuelTypeValueChanged(event) {
+    this.userInputs.fuelType = event;
     this.inputChange.emit(this.userInputs);
   }
 

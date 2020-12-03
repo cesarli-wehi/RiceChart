@@ -9,13 +9,14 @@ import { BaseChartDirective, Label } from 'ng2-charts';
   templateUrl: './bar.component.html',
   styleUrls: ['./bar.component.css']
 })
-export class BarComponent implements OnChanges {
+export class BarComponent implements OnInit, OnChanges {
   @ViewChild(BaseChartDirective, {static: false}) public chart: BaseChartDirective;
   @Input() barColour;
   @Input() barName;
   @Input() barData;
   @Input() barLabel;
   @Input() barMax;
+  @Input() barMin;
 
   barChartOptions: ChartOptions;
   barChartLabels: Label[] = ['Test'];
@@ -55,6 +56,7 @@ export class BarComponent implements OnChanges {
             fontColor: 'black',
             beginAtZero: true,
             max: this.barMax,
+            min: this.barMin
           },
           gridLines: { color: 'rgba(255,255,255,0.1)' },
           display: true,
@@ -88,7 +90,6 @@ export class BarComponent implements OnChanges {
     if(this.barChartData) {
       this.barChartData[0]['data'] = [this.barData];
     }
-
     // just trying refresh full variable
     //this.barChartData = this.barChartData.slice();
 

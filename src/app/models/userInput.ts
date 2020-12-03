@@ -5,4 +5,8 @@ export class UserInput {
   gasCost: number;
   h2Value: number;
   oValue: number;
+  methaneCons: number;
+  co2Prod: number;
+  fuelType: number;
+  uptime: number;
 }
