@@ -124,8 +124,6 @@ export class ChartDashComponent implements OnInit {
 
   //arial font
   //increase font 12/14
-  //pale blue change
-  //yellow change
   //fuel savings with charlie
   //increase bar legend
 
