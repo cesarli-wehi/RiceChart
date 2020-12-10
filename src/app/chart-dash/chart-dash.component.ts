@@ -130,7 +130,7 @@ export class ChartDashComponent implements OnInit {
 
 
   calcData(event: UserInput) {
-    this.barData.units = event.energy / 100;
+    this.barData.units = Math.ceil(event.energy / 100);
 
     this.barData.consumption = (event.electricityCost / 100) * event.energy;
 
