@@ -47,8 +47,15 @@ export class BarComponent implements OnInit, OnChanges {
       responsive: true,
       scales: {
         xAxes: [{
-          ticks: { fontColor: 'black' },
-          gridLines: { color: 'rgba(255,255,255,0.1)' },
+          ticks: {
+            fontColor: 'black',
+            fontSize: 14,
+           },
+          gridLines: {
+            color: 'rgba(255,255,255,0.1)',
+            lineWidth: 3,
+            zeroLineWidth: 2,
+          },
           display: true,
         }],
         yAxes: [{
@@ -56,10 +63,16 @@ export class BarComponent implements OnInit, OnChanges {
             fontColor: 'black',
             beginAtZero: true,
             max: this.barMax,
-            min: this.barMin
+            min: this.barMin,
+            fontSize: 14,
           },
-          gridLines: { color: 'rgba(255,255,255,0.1)' },
+          gridLines: {
+            color: 'rgba(255,255,255,0.1)',
+            lineWidth: 3,
+            zeroLineWidth: 2,
+          },
           display: true,
+
         }]
       },
       layout : {
