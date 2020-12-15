@@ -122,7 +122,7 @@ export class ChartDashComponent implements OnInit {
 
   }
 
-  //arial font
+
   //increase font 12/14
   //fuel savings with charlie
   //increase bar legend
@@ -130,23 +130,48 @@ export class ChartDashComponent implements OnInit {
 
 
   calcData(event: UserInput) {
+    //calc units
     this.barData.units = Math.ceil(event.energy / 100);
 
+    const newUnitsScale = this.barData.units ? this.barData.units + (this.barData.units/10) : 10;
+
+    this.units.barMax = Math.ceil(newUnitsScale / 10) * 10;
+
+    //calc energy consuption
     this.barData.consumption = (event.electricityCost / 100) * event.energy;
 
+    //calc costs
     this.inputs.costs = this.barData.units * 90000;
 
+    //calc water usage
     this.barData.waterUsage = event.energy * 0.99;
 
+    const newWaterScale = this.barData.waterUsage ? this.barData.waterUsage + (this.barData.waterUsage/10) : 500;
+
+    this.water.barMax = Math.ceil(newWaterScale / 100) * 100;
+
+    //calc h2 prod
     this.barData.hydrogenProd = (35 / 200 * event.energy);
 
+    const newH2Scale = this.barData.hydrogenProd ? this.barData.hydrogenProd + (this.barData.hydrogenProd/10) : 100;
+
+    this.h2Prod.barMax = Math.ceil(newH2Scale / 100) * 100;
+
+
+    //calc o2 prod
     this.barData.oxygenProd = this.barData.hydrogenProd / 2;
 
+    const newOScale = this.barData.oxygenProd ? this.barData.oxygenProd + (this.barData.oxygenProd/10) : 100;
+
+    this.oProd.barMax = Math.ceil(newOScale / 100) * 100;
+
+    //calc yearly total
     const totalHours = event.uptime * 365;
     const h2Out = this.barData.hydrogenProd * totalHours;
     const energyOfH2 = h2Out / 11.26 * 33.33;
     const lessFuel = energyOfH2 * 11.3627;
 
+    //calc co2 savings
     switch (+event.fuelType) {
       case 1: {
         this.barData.carbonProd = energyOfH2 * this.co2Coal * event.co2Prod;
@@ -166,14 +191,25 @@ export class ChartDashComponent implements OnInit {
       }
     }
 
+    const newCo2Scale = this.barData.carbonProd ? this.barData.carbonProd + (this.barData.carbonProd/10) : 5000;
+
+    this.co2Prod.barMax = Math.ceil(newCo2Scale / 1000) * 1000;
+
+    //calc fuel savings
     this.barData.fuelSavings = energyOfH2 / 11.3672;
 
+    const newFuelScale = this.barData.fuelSavings ? this.barData.fuelSavings + (this.barData.fuelSavings/10) : 100000;
+
+    this.methaneCons.barMax = Math.ceil(newFuelScale / 1000) * 1000;
+
+    //calc roi
     const h2Value = energyOfH2 * event.gasCost;
     const oValue = this.barData.oxygenProd * totalHours * event.oValue;
     const co2Value = this.barData.carbonProd;
 
     this.barData.roi = this.inputs.costs / (h2Value + oValue + co2Value);
 
+    //set data to chart
     this.data.setChartData(this.barData);
   }
 

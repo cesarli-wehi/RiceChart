@@ -39,6 +39,7 @@ export class BarComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges) {
+    this.drawChart();
     this.updateChart();
   }
 
