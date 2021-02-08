@@ -1,0 +1,22 @@
+.jumbotron {
+  color: white;
+  background-image: url("src/assets/img/Partners Banner.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 40vh;
+}
+
+.riceLogo {
+  position: absolute;
+  float: left;
+  top: 0;
+  width: 200px;
+  margin-top: 0;
+  margin-left: 15px;
+}
+
+.heroTxt {
+  margin-top: 100px;
+  margin-bottom: auto;
+}

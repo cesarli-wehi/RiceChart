@@ -1,0 +1,12 @@
+.footer {
+  width: 100%;
+  height: 160px;
+  line-height: 60px;
+  background-color: #175A49;
+}
+
+.copyright {
+  display: flex;
+  justify-content: flex-start;
+  color: #7C8C85;
+}

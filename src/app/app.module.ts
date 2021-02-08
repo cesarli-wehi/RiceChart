@@ -9,14 +9,20 @@ import { BarInputsComponent } from './UserControls/bar-inputs/bar-inputs.compone
 import { ChartDashComponent } from './chart-dash/chart-dash.component';
 import { FormsModule } from '@angular/forms';
 import { DataService } from './services/data.service';
+import { HeroComponent } from './hero/hero.component';
+import { FooterComponent } from './footer/footer.component';
+import { PartnersComponent } from './partners/partners.component';
 
 
 @NgModule({
-  declarations: [
+  declarations: [		
     BarComponent,
     BarInputsComponent,
     AppComponent,
     ChartDashComponent,
+    HeroComponent,
+      FooterComponent,
+      PartnersComponent
    ],
   imports: [
     FormsModule,
