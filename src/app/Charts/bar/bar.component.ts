@@ -93,7 +93,7 @@ export class BarComponent implements OnInit, OnChanges {
       {
         data: this.barData,
         label: this.barLabel,
-        barThickness: 100,
+        barThickness: 50,
         barPercentage: 1.0,
       }
     ];
