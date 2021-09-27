@@ -66,8 +66,8 @@ export class ChartDashComponent implements OnInit {
 
     this.water = {
       colour: '#30bcedff',
-      barName: 'H20',
-      barLabel: 'M3',
+      barName: 'H₂O',
+      barLabel: 'M\xB3',
       barMax: 500,
       barMin: 0
     };
@@ -75,15 +75,15 @@ export class ChartDashComponent implements OnInit {
     this.methaneCons = {
       colour: '#d7263dff',
       barName: 'Fuel Savings',
-      barLabel: 'M3',
+      barLabel: 'M\xB3',
       barMax: 1000000,
       barMin: 0
     };
 
     this.h2Prod = {
       colour: '#89daffff',
-      barName: 'H2',
-      barLabel: 'M3/h',
+      barName: 'H₂',
+      barLabel: 'M\xB3/h',
       barMax: 100,
       barMin: 0
     };
@@ -91,14 +91,14 @@ export class ChartDashComponent implements OnInit {
     this.oProd = {
       colour: '#ff9f1cff',
       barName: 'O',
-      barLabel: 'M3/h',
+      barLabel: 'M\xB3/h',
       barMax: 100,
       barMin: 0
     };
 
     this.co2Prod = {
       colour: '#070707ff',
-      barName: 'CO2 Savings',
+      barName: 'CO₂ Savings',
       barLabel: '£/Yr',
       barMax: 50000,
       barMin: 0
@@ -107,7 +107,7 @@ export class ChartDashComponent implements OnInit {
     this.gasCost = {
       colour: 'gray',
       barName: 'Fuel',
-      barLabel: 'P/M3',
+      barLabel: 'P/M\xB3',
       barMax: 100,
       barMin: 0
     };
